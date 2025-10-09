@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using LabApi.Events.CustomHandlers;
 using LabApi.Features;
 using LabApi.Features.Wrappers;
 using LabApi.Loader.Features.Plugins;
@@ -8,7 +7,7 @@ using Version = System.Version;
 
 namespace HintDiscordFalcon
 {
-    public class Plugin : Plugin<Broadcast>
+    public class Plugin : LabApi.Loader.Features.Plugins.Plugin
     {
         public override string Name => "Hints Discord Falcon";
         public override string Description => "Hints Promocion Discord Falcon";
