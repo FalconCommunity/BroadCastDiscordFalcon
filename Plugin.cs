@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using LabApi.Features;
 using LabApi.Features.Wrappers;
-using LabApi.Loader.Features.Plugins;
 using MEC;
 using Version = System.Version;
 
@@ -33,8 +32,11 @@ namespace HintDiscordFalcon
 
             while (true)
             {
-                Server.SendBroadcast("<color=green>Recordamos que os podéis unir al</color> <color=blue>discord</color> <color=green>en server info.</color>", 5);
-
+                foreach (Player player in Player.List)
+                {
+                    player.SendBroadcast("<color=green>Recordamos que os podéis unir al</color> <color=blue>discord</color> <color=green>en server info.</color>", 5);
+                }
+                
                 yield return Timing.WaitForSeconds(300f);
             }
         }
